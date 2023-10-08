@@ -1,0 +1,31 @@
+syntax = "proto3";
+package file;
+option java_multiple_files = true;
+option java_package = "com.simtech.sim.cloudcompiler.config";
+
+option java_outer_classname = "File";
+
+service FileService {
+  rpc UploadFile(stream UploadFileRequest) returns (UploadFileResponse);
+  rpc DownloadFile(DownloadFileRequest) returns (stream DownloadFileResponse);
+}
+
+//Upload
+message UploadFileRequest {
+  string FileName = 1;
+  bytes Content = 2;
+}
+
+message UploadFileResponse {
+  string FilePath = 1;
+}
+
+//Download
+message DownloadFileRequest {
+  string InstanceId = 1;
+  string algorithmType = 2;
+}
+
+message DownloadFileResponse {
+  bytes Content = 1;
+}
