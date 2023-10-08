@@ -53,7 +53,7 @@ There are two RestFul apis
 2. [Your host]/compiler/execute-single-line
 
 1 takes in 3 request params, which is instanceId, type, data
-Type is the python file name you upload in your minIO server and type is the bucket Name, data is the value you want to transfer into your python code
+instanceId is the python file name you upload in your minIO server and type is the bucket Name, data is the value you want to transfer into your python code
 
 For 2, just type in a python code such as "print("Hello World!")", the result will be displayed. You can't transfer data into jupyter in this case.
 
